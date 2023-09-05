@@ -35,6 +35,8 @@ int main() {
   printf("-----------------------------------------------\n");
   printf("Hasil Konversi:\n");
   printf("%.2f KM sama dengan %d meter\n", inputKm, (int)kmToMeter);
+  printf("\nTekan enter untuk melanjutkan konversi...\n");
+  getchar();
   printf("%.2f KM sama dengan %d centimeter\n", inputKm, (int)kmToCenti);
   printf("-----------------------------------------------\n");
 
