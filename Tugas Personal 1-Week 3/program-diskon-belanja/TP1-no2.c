@@ -26,7 +26,7 @@ int main() {
     printf("Masukkan nilai total belanja (rupiah): Rp. ");
     scanf("%ld", &belanja);
 
-    // Menghitung diskon berdasarkan ketentuan
+    // Menghitung diskon total belanja
     double diskon = 0;
     if (belanja >= 200000 && belanja < 550000) {
       diskon = belanja * 0.1; // Diskon 10%
