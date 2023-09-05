@@ -8,14 +8,10 @@ int main() {
   double diskonJumlahTransaksi = 0;
   char lanjut;
 
-  char merah[] = "\033[1;31m";   // Warna merah 
-  char hijau[] = "\033[1;32m";   // Warna hijau 
-  char reset[] = "\033[0m";      
-
   // Header
-  printf("===============================================\n");
-  printf("\t%sPROGRAM UNTUK MENGHITUNG DISKON BELANJA%s\n", hijau, reset);
-  printf("===============================================\n\n");
+  printf("========================================\n");
+  printf("PROGRAM UNTUK MENGHITUNG DISKON BELANJA\n");
+  printf("========================================\n\n");
 
   double totalHarga = 0; // Deklarasi hargaAkhir
 
@@ -26,7 +22,7 @@ int main() {
     printf("Masukkan nilai total belanja (rupiah): Rp. ");
     scanf("%ld", &belanja);
 
-    // Menghitung diskon total belanja
+    // Menghitung diskon berdasarkan ketentuan
     double diskon = 0;
     if (belanja >= 200000 && belanja < 550000) {
       diskon = belanja * 0.1; // Diskon 10%
@@ -35,7 +31,7 @@ int main() {
     } else if (belanja > 1000000) {
       diskon = belanja * 0.3; // Diskon 30%
     }
-    
+
     // Menambahkan diskon ke harga total
     totalBelanja += belanja;
     diskonTotalBelanja += diskon; // Memperbaharui diskonTotalBelanja
@@ -46,7 +42,7 @@ int main() {
     printf("Belanja lagi? (Y/N) ");
     scanf(" %c", &lanjut);
     if (lanjut != 'y' && lanjut != 'Y' && lanjut != 'n' && lanjut != 'N') {
-      printf("\n%sPERINTAH TIDAK VALID. HANYA MASUKKAN Y/N%s\n\n", merah, reset);
+      printf("\nPERINTAH TIDAK VALID. HANYA MASUKKAN Y/N\n\n");
     } else if (lanjut == 'n' || lanjut == 'N') {
       break;
     }
@@ -62,7 +58,7 @@ int main() {
 
   // Menampilkan rekap transaksi
   printf("===============================================\n");
-  printf("Rincian transaks:\n");
+  printf("Rincian transaksi:\n");
   printf("Total belanja                  : Rp. %.2lf\n", (double)totalBelanja);
   printf("Diskon dari total belanja      : Rp. %.2lf\n", diskonTotalBelanja);
   printf("Diskon dari jumlah transaksi   : Rp. %.2lf\n", diskonJumlahTransaksi);
