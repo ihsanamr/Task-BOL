@@ -1,3 +1,7 @@
+/*
+Tugas Personal 1 - Mata Kuliah Algoritma dan Pemrograman
+Nama - Nim : Ihsan Amri Muyassar - 2702350592
+*/
 #include <stdio.h>
 
 int main() {
@@ -14,6 +18,7 @@ int main() {
     printf("Masukkan nilai total belanja (rupiah): Rp. ");
     scanf("%ld", &belanja);
 
+    //Kondisi diskon yang akan diperoleh jika user belanja minimal 200000
     if (belanja >= 200000 && belanja < 550000) {
       diskon = belanja * 0.1;
     } else if (belanja >= 550000 && belanja <= 1000000) {
@@ -23,11 +28,13 @@ int main() {
     }
 
     totalBelanja += belanja;
+    // Update diskonTotalBelanja
     diskonTotalBelanja += diskon;
     totalHarga += belanja - diskon;
 
     jumlahTransaksi++;
 
+    //Pesan akan muncul jika user sudah mencapai transaksi yang ke-4
     if (jumlahTransaksi == 4) {
       printf("\n---------------------------------------------------------------------");
       printf("\nSelamat! Anda mendapatkan diskon tambahan dari jumlah transaksi.\n");
@@ -35,7 +42,7 @@ int main() {
       printf("----------------------------------------------------------------------\n\n");
     }
 
-    // Apakah user ingin melanjutkan belanja?
+    // Input user apakah ingin melanjutkan belanja
      printf("Ingin belanja lagi ('Y' untuk belanja lagi/'N' jika sudah selesai belanja)? ");
      scanf(" %c", &lanjut);
      if (lanjut != 'y' && lanjut != 'Y' && lanjut != 'n' && lanjut != 'N') {
@@ -45,8 +52,8 @@ int main() {
      }
   } while (1);
 
+  // Memberikan diskon jika user mencapai jumlah transaksi ke-4 kalinya
   if (jumlahTransaksi == 4) {
-    // Apply 20% discount only if the user completed four transactions
     diskonJumlahTransaksi = (totalBelanja - diskonTotalBelanja) * 0.2;
   }
 
