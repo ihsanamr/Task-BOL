@@ -18,7 +18,7 @@ int main() {
 
   while (1) {
     // Input total belanja
-    printf("Masukkan nilai total belanja (rupiah): Rp. ");
+    printf("Masukkan nilai total belanja (dalam rupiah): Rp. ");
     scanf("%ld", &belanja);
 
     // Menghitung diskon sesuai dengan total belanja yang diinput user
@@ -46,7 +46,7 @@ int main() {
     
     // Bertanya kepada user apakah ingin melanjutkan belanja
     while (1) {
-      printf("Belanja lagi? (Y/N) ");
+      printf("Apakah ingin lanjut belanja (Y/N)? ");
       scanf(" %c", &lanjut);
       if (lanjut == 'n' || lanjut == 'N') {
         break;
@@ -78,4 +78,3 @@ int main() {
 
   return 0;
 }
-
