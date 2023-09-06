@@ -21,7 +21,7 @@ int main() {
     printf("Masukkan nilai total belanja (rupiah): Rp. ");
     scanf("%ld", &belanja);
 
-    // Menghitung diskon berdasarkan ketentuan
+    // Menghitung diskon sesuai dengan total belanja yang diinput user
     if (belanja >= 200000 && belanja < 550000) {
       diskon = belanja * 0.1; // Diskon 10%
     } else if (belanja >= 550000 && belanja <= 1000000) {
@@ -30,9 +30,9 @@ int main() {
       diskon = belanja * 0.3; // Diskon 30%
     }
 
-    // Menambahkan diskon ke harga total
     totalBelanja += belanja;
-    diskonTotalBelanja += diskon; // Memperbaharui diskonTotalBelanja
+    // Update nilai diskon total belanja
+    diskonTotalBelanja += diskon; 
     totalHarga += belanja - diskon;
     jumlahTransaksi++;
 
@@ -44,7 +44,7 @@ int main() {
       printf("---------------------------------------------------------------------\n\n");
     }
     
-    // Apakah user ingin melanjutkan belanja?
+    // Bertanya kepada user apakah ingin melanjutkan belanja
     while (1) {
       printf("Belanja lagi? (Y/N) ");
       scanf(" %c", &lanjut);
