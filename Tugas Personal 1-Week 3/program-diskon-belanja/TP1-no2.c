@@ -1,62 +1,57 @@
 #include <stdio.h>
 
 int main() {
-  // Deklarasi variabel
-  long totalBelanja = 0;
-  long jumlahTransaksi = 0;
-  double diskonTotalBelanja = 0;
-  double diskonJumlahTransaksi = 0;
+  long totalBelanja = 0, jumlahTransaksi = 0, belanja;
+  double diskonTotalBelanja = 0, diskonJumlahTransaksi = 0, totalHarga = 0, diskon = 0;
   char lanjut;
 
-  // Header
-  printf("========================================\n");
-  printf("PROGRAM UNTUK MENGHITUNG DISKON BELANJA\n");
-  printf("========================================\n\n");
-
-  double totalHarga = 0; // Deklarasi hargaAkhir
+  printf("=======================================================\n");
+  printf("\tPROGRAM UNTUK MENGHITUNG DISKON BELANJA\n");
+  printf("=======================================================\n\n");
 
   do {
-    long belanja;
 
-    // Input total belanja
     printf("Masukkan nilai total belanja (rupiah): Rp. ");
     scanf("%ld", &belanja);
 
-    // Menghitung diskon berdasarkan ketentuan
-    double diskon = 0;
     if (belanja >= 200000 && belanja < 550000) {
-      diskon = belanja * 0.1; // Diskon 10%
+      diskon = belanja * 0.1;
     } else if (belanja >= 550000 && belanja <= 1000000) {
-      diskon = belanja * 0.2; // Diskon 20%
+      diskon = belanja * 0.2;
     } else if (belanja > 1000000) {
-      diskon = belanja * 0.3; // Diskon 30%
+      diskon = belanja * 0.3;
     }
 
-    // Menambahkan diskon ke harga total
     totalBelanja += belanja;
-    diskonTotalBelanja += diskon; // Memperbaharui diskonTotalBelanja
+    diskonTotalBelanja += diskon;
     totalHarga += belanja - diskon;
+
     jumlahTransaksi++;
 
-    // Apakah user ingin melanjutkan belanja?
-    printf("Belanja lagi? (Y/N) ");
-    scanf(" %c", &lanjut);
-    if (lanjut != 'y' && lanjut != 'Y' && lanjut != 'n' && lanjut != 'N') {
-      printf("\nPERINTAH TIDAK VALID. HANYA MASUKKAN Y/N\n\n");
-    } else if (lanjut == 'n' || lanjut == 'N') {
-      break;
+    if (jumlahTransaksi == 4) {
+      printf("\n---------------------------------------------------------------------");
+      printf("\nSelamat! Anda mendapatkan diskon tambahan dari jumlah transaksi.\n");
+      printf("\nJika anda memilih untuk melanjutkan belanja, maka diskon ini tidak akan berlaku.\n");
+      printf("----------------------------------------------------------------------\n\n");
     }
+
+    // Apakah user ingin melanjutkan belanja?
+     printf("Ingin belanja lagi ('Y' untuk belanja lagi/'N' jika sudah selesai belanja)? ");
+     scanf(" %c", &lanjut);
+     if (lanjut != 'y' && lanjut != 'Y' && lanjut != 'n' && lanjut != 'N') {
+       printf("\nPERINTAH TIDAK VALID. HANYA MASUKKAN Y/N\n\n");
+     } else if (lanjut == 'n' || lanjut == 'N') {
+       break;
+     }
   } while (1);
 
-  // Menghitung diskon dari jumlah transaksi jika jumlahTransaksi >= 4
-  if (jumlahTransaksi >= 4) {
-    diskonJumlahTransaksi = totalHarga * 0.2; // Diskon 20% dari diskon total belanja
+  if (jumlahTransaksi == 4) {
+    // Apply 20% discount only if the user completed four transactions
+    diskonJumlahTransaksi = (totalBelanja - diskonTotalBelanja) * 0.2;
   }
 
-  // Menampilkan harga akhir
   printf("\nHarga Akhir: Rp. %.2lf\n\n", (totalHarga - diskonJumlahTransaksi));
 
-  // Menampilkan rekap transaksi
   printf("===============================================\n");
   printf("Rincian transaksi:\n");
   printf("Total belanja                  : Rp. %.2lf\n", (double)totalBelanja);
