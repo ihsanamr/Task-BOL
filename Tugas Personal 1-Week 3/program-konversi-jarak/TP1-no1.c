@@ -8,8 +8,6 @@ int main() {
   printf("=====================================\n");
   printf("\tPROGRAM KONVERSI JARAK\n");
   printf("=====================================\n");
-
-  // Pesan selamat datang
   printf("\nSelamat datang di Program Konversi Jarak!\n");
 
   printf("\nTekan enter untuk memulai program...");
@@ -32,7 +30,7 @@ int main() {
   kmToMeter = (inputKm * 1000);
   kmToCenti = (inputKm * 100000);
 
-  // Membersihkan buffer stdin
+  // Membersihkan buffer
   while (getchar() != '\n');
 
   // Output
