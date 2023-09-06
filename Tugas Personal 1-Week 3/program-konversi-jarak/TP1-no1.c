@@ -16,10 +16,16 @@ int main() {
   getchar();
 
   // Input user
-  printf("\n------------------------------------\n");
+  printf("\n-----------------------------------------------\n");
+  do {
   printf("Masukkan jarak dalam satuan KM: ");
-  scanf("%f", &inputKm);
-  printf("------------------------------------\n");
+    if (scanf("%f", &inputKm) != 1 || inputKm < 0) {
+      printf("Input tidak valid, harap masukkan angka positif saja.\n");
+      while (getchar() != '\n'); // Membersihkan buffer
+    } else {
+      break;
+    }
+  } while (1);
 
 
   // Konversi
@@ -35,8 +41,6 @@ int main() {
   printf("-----------------------------------------------\n");
   printf("Hasil Konversi:\n");
   printf("%.2f KM sama dengan %d meter\n", inputKm, (int)kmToMeter);
-  printf("\nTekan enter untuk melanjutkan konversi...\n");
-  getchar();
   printf("%.2f KM sama dengan %d centimeter\n", inputKm, (int)kmToCenti);
   printf("-----------------------------------------------\n");
 
