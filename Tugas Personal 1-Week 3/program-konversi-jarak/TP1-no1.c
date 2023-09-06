@@ -1,3 +1,8 @@
+/*
+Tugas Personal 1 - Mata Kuliah Algoritma dan Pemrograman
+Nama - NIM : Ihsan Amri Muyassar - 2702350592
+*/
+
 #include <stdio.h>
 
 int main() {
