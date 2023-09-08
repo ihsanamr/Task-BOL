@@ -4,22 +4,47 @@ Nama - NIM : Ihsan Amri Muyassar - 2702350592
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
 int main() {
   // Deklarasi variabel
   long totalBelanja = 0, jumlahTransaksi = 0, belanja;
   double diskonTotalBelanja = 0, diskonJumlahTransaksi = 0, totalHarga = 0, diskon = 0;
-  char lanjut;
+  char lanjut[5];
 
   // Header
-  printf("===================================================\n");
+  printf("=========================================================\n");
   printf("\tPROGRAM UNTUK MENGHITUNG DISKON BELANJA\n");
-  printf("===================================================\n\n");
+  printf("=========================================================\n");
 
   while (1) {
     // Input total belanja
-    printf("Masukkan nilai total belanja (dalam rupiah): Rp. ");
-    scanf("%ld", &belanja);
+    char inputSementara[100];
+    while (1) {
+        printf("\nMasukkan nilai total belanja ke %ld (dalam rupiah): Rp. ", jumlahTransaksi + 1);
+        scanf("%s", inputSementara);
+        int valid = 1;
+        // Memeriksa apakah input hanya berisi angka
+        for (int i = 0; inputSementara[i] != '\0'; i++) {
+            if (!isdigit(inputSementara[i])) {
+                valid = 0;
+                break;
+            }
+        }
+        if (valid) {
+            // Konversi string menjadi long
+            belanja = atol(inputSementara);
+            if (belanja < 0) {
+                printf("Input tidak valid. Harap masukkan nominal dengan benar.\n");
+            } else {
+                break;
+            }
+        } else {
+            printf("\nInput tidak valid. Harap masukkan nominal dengan benar.\n");
+        }
+    }
 
     // Menghitung diskon sesuai dengan total belanja yang diinput user
     if (belanja >= 200000 && belanja < 550000) {
@@ -47,17 +72,17 @@ int main() {
     // Bertanya kepada user apakah ingin melanjutkan belanja
     while (1) {
       printf("Apakah ingin lanjut belanja (Y/N)? ");
-      scanf(" %c", &lanjut);
-      if (lanjut == 'n' || lanjut == 'N') {
+      scanf("%s", lanjut);
+      if (strcmp(lanjut, "n") == 0 || strcmp(lanjut, "N") == 0) {
         break;
-      } else if (lanjut == 'y' || lanjut == 'Y') {
+      } else if (strcmp(lanjut, "y") == 0 || strcmp(lanjut, "Y") == 0) {
         break;
       } else {
         printf("\nPERINTAH TIDAK VALID. HANYA MASUKKAN Y/N\n\n");
       }
     }
 
-    if (lanjut == 'n' || lanjut == 'N') {
+    if (strcmp(lanjut, "n") == 0 || strcmp(lanjut, "N") == 0) {
       break;
     }
   }
