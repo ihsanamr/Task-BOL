@@ -21,8 +21,9 @@ int main() {
 
   // Input user
     printf("\n-----------------------------------------------\n");
-    char inputSementara[100]; // Gunakan array karakter untuk input sementara
-    printf("Masukkan jarak dalam satuan KM: ");
+    // Membuat array of character sebagai penampung sementara
+    char inputSementara[100]; 
+    printf("Masukkan jarak dalam satuan KM (Tanpa spasi): ");
     while(1) {
       scanf("%s", inputSementara);
       int valid = 1;
@@ -42,7 +43,7 @@ int main() {
               break;
           }
       } else {
-          printf("Input tidak valid. Harap masukkan angka positif: ");
+          printf("\nInput tidak valid. Harap masukkan angka positif: ");
       }
     }
 
