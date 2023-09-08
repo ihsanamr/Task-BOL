@@ -4,6 +4,7 @@ Nama - NIM : Ihsan Amri Muyassar - 2702350592
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
   // Deklarasi variabel
@@ -19,16 +20,31 @@ int main() {
   getchar();
 
   // Input user
-  printf("\n-----------------------------------------------\n");
-  do {
-  printf("Masukkan jarak dalam satuan KM: ");
-    if (scanf("%f", &inputKm) != 1 || inputKm < 0) {
-      printf("Input tidak valid, harap masukkan angka positif saja.\n");
-      while (getchar() != '\n'); // Membersihkan buffer
-    } else {
-      break;
+    printf("\n-----------------------------------------------\n");
+    char inputSementara[100]; // Gunakan array karakter untuk input sementara
+    printf("Masukkan jarak dalam satuan KM: ");
+    while(1) {
+      scanf("%s", inputSementara);
+      int valid = 1;
+      // Memeriksa apakah input hanya berisi angka
+      for (int i = 0; inputSementara[i] != '\0'; i++) {
+          if (!isdigit(inputSementara[i])) {
+              valid = 0;
+              break;
+          }
+      }
+      if (valid) {
+          // Konversi string menjadi double
+          inputKm = strtod(inputSementara, NULL);
+          if (inputKm < 0) {
+              printf("Input tidak valid. Harap masukkan angka positif: ");
+          } else {
+              break;
+          }
+      } else {
+          printf("Input tidak valid. Harap masukkan angka positif: ");
+      }
     }
-  } while (1);
 
 
   // Konversi
