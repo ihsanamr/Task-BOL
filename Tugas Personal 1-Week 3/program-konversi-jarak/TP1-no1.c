@@ -5,6 +5,7 @@ Nama - NIM : Ihsan Amri Muyassar - 2702350592
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int main() {
   // Deklarasi variabel
