@@ -1,3 +1,10 @@
+/*Group 7-JCCA
+1. Erwin Saputra Yapto (2301970076)
+2. Iftikharus Raudana Muntazar (2702381622)
+3. Ihsan Amri Muyassar (2702350592)
+4. Wahyu Mentari Mayadita (2702347723)
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
