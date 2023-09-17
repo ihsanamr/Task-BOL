@@ -243,11 +243,11 @@ int main() {
                     } while (1);
 
                     // Memasukkan nilai dari input user ke struct mahasiswa
-                    mahasiswa[i].quiz = getInputNilai("Nilai quiz");
-                    mahasiswa[i].tugas = getInputNilai("Nilai tugas");
-                    mahasiswa[i].absensi = getInputNilai("Nilai absensi");
-                    mahasiswa[i].praktek = getInputNilai("Nilai praktek");
-                    mahasiswa[i].uas = getInputNilai("Nilai uas");
+                    mahasiswa[i].quiz = getInputNilai("Nilai Quiz");
+                    mahasiswa[i].tugas = getInputNilai("Nilai Tugas");
+                    mahasiswa[i].absensi = getInputNilai("Nilai Absensi");
+                    mahasiswa[i].praktek = getInputNilai("Nilai Praktek");
+                    mahasiswa[i].uas = getInputNilai("Nilai UAS");
 
                     printf("----------------------------------------------\n");
 
@@ -273,12 +273,12 @@ int main() {
                     printf("-----------------------------------------------\n");
                     printf("Data Mahasiswa ke-%d\n", i + 1);
                     printf("Nama mahasiswa\t\t: %s\n", mahasiswa[i].nama);
-                    printf("Nilai quiz\t\t: %.2f (Grade: %c)\n", mahasiswa[i].quiz, konversiNilaiKeGrade(mahasiswa[i].quiz));
-                    printf("Nilai tugas\t\t: %.2f (Grade: %c)\n", mahasiswa[i].tugas, konversiNilaiKeGrade(mahasiswa[i].tugas));
-                    printf("Nilai absensi\t\t: %.2f (Grade: %c)\n", mahasiswa[i].absensi, konversiNilaiKeGrade(mahasiswa[i].absensi));
-                    printf("Nilai praktek\t\t: %.2f (Grade: %c)\n", mahasiswa[i].praktek, konversiNilaiKeGrade(mahasiswa[i].praktek));
-                    printf("Nilai uas\t\t: %.2f (Grade: %c)\n", mahasiswa[i].uas, konversiNilaiKeGrade(mahasiswa[i].uas));
-                    printf("Nilai rata-rata\t\t: %.2f (Grade: %c)\n", mahasiswa[i].rataRata, konversiNilaiKeGrade(mahasiswa[i].rataRata));
+                    printf("Nilai Quiz\t\t: %.2f (Grade: %c)\n", mahasiswa[i].quiz, konversiNilaiKeGrade(mahasiswa[i].quiz));
+                    printf("Nilai Tugas\t\t: %.2f (Grade: %c)\n", mahasiswa[i].tugas, konversiNilaiKeGrade(mahasiswa[i].tugas));
+                    printf("Nilai Absensi\t\t: %.2f (Grade: %c)\n", mahasiswa[i].absensi, konversiNilaiKeGrade(mahasiswa[i].absensi));
+                    printf("Nilai Praktek\t\t: %.2f (Grade: %c)\n", mahasiswa[i].praktek, konversiNilaiKeGrade(mahasiswa[i].praktek));
+                    printf("Nilai UAS\t\t: %.2f (Grade: %c)\n", mahasiswa[i].uas, konversiNilaiKeGrade(mahasiswa[i].uas));
+                    printf("Nilai Rata-rata\t\t: %.2f (Grade: %c)\n", mahasiswa[i].rataRata, konversiNilaiKeGrade(mahasiswa[i].rataRata));
                     if (mahasiswa[i].status == 'L') {
                         printf("Status kelulusan\t: Lulus\n");
                     } else {
