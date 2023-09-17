@@ -1,3 +1,14 @@
+/*Group 7-JCCA
+1. Erwin Saputra Yapto (2301970076)
+2. Iftikharus Raudana Muntazar (2702381622)
+3. Ihsan Amri Muyassar (2702350592)
+4. Wahyu Mentari Mayadita (2702347723) 
+
+Referensi:
+https://www.tutorialspoint.com/how-to-measure-time-taken-by-a-function-in-c#:~:text=For%20this%20problem%2C%20we%20will,values%20to%20get%20the%20differences
+https://www.geeksforgeeks.org/how-to-measure-time-taken-by-a-program-in-c/
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
