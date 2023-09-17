@@ -40,6 +40,16 @@ int apakahHuruf(const char *huruf) {
     return 1; // Return 1 jika semua karakter adalah huruf
 }
 
+/* Fungsi pengecekan apakah nama yang dimasukkan user sudah sesuai */
+int apakahNama(char *nama) {
+  int length = strlen(nama);
+  for (int i = 0; i < length; i++) {
+    if (!isalpha(nama[i]) && nama[i] != ' ' && nama[i] != '-') { // Apakah nama yang dimasukkan user sudah sesuai?
+      return 0;
+    }
+  }
+  return 1;
+}
 
 // Fungsi untuk memeriksa apakah string hanya mengandung angka
 int apakahNomor(const char *nomor) {
@@ -58,6 +68,9 @@ int apakahNilai(const char *nilai) {
     int i = 0;
     size_t length = strlen(nilai);
     for (i = 0; i < length; i++) {
+        if (nilai[0] == '.') {
+            return 0;
+        }
         if (!isdigit(nilai[i]) && nilai[i] != '.') { // Apakah setiap karakternya angka atau titik desimal?
             return 0; // Return 0 jika ternyata ada karakter yang bukan merupakan angka atau titik desimal
         }
