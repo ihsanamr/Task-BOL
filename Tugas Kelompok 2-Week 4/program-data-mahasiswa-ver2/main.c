@@ -45,10 +45,10 @@ int apakahNama(char *nama) {
   int length = strlen(nama);
   for (int i = 0; i < length; i++) {
     if (!isalpha(nama[i]) && nama[i] != ' ' && nama[i] != '-') { // Apakah nama yang dimasukkan user sudah sesuai?
-      return 0;
+      return 0; // Return 0 jika ternyata nama yang dimasukkan tidak valid
     }
   }
-  return 1;
+  return 1; // Return 1 jika setiap karakter dari nama sudah sesuai
 }
 
 // Fungsi untuk memeriksa apakah string hanya mengandung angka
@@ -238,7 +238,7 @@ int main() {
                             if (length > 1) { // Pencegahan agar user tidak input enter saja
                                 if (length > 0 && mahasiswa[i].nama[length - 1] == '\n') {
                                 mahasiswa[i].nama[length - 1] = '\0'; // Mengganti newline dari fgets menjadi null terminator
-                                    if (!apakahHuruf(mahasiswa[i].nama)) { // Validasi input nama mahasiswa
+                                    if (!apakahNama(mahasiswa[i].nama)) { // Validasi input nama mahasiswa
                                         printf("----------------------------------------------\n");
                                         printf("  NAMA MAHASISWA YANG DIMASUKKAN TIDAK VALID \n");
                                         printf("----------------------------------------------\n");
