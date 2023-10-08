@@ -443,9 +443,9 @@ int main() {
     while (1) {
         clearScreen();
         //Header
-        printf("=====================================\n");
-        printf("\nPUSTAKA VIRTUAL\n");
-        printf("=====================================\n");
+        printf("==================================\n");
+        printf("\tPUSTAKA VIRTUAL\n");
+        printf("==================================\n");
         printf("\n");
 
         //Menu
