@@ -218,7 +218,7 @@ int validasiPengarang(const char *pengarang) {
             break;
         }
         printf("\033[1;31m-------------------------------------------------------------------------------------------------\n");
-        printf("     MASUKKAN PENGARANG YANG VALID (ALFABET, SPASI, '-') (PANJANG MAX 100 KARAKTER)\n");
+        printf("     MASUKKAN PENGARANG YANG VALID (ALFABET, SPASI, '-', '.') (PANJANG MAX 100 KARAKTER)\n");
         printf("-------------------------------------------------------------------------------------------------\033[0m\n");
     }
     return 1;  // Pengarang valid
