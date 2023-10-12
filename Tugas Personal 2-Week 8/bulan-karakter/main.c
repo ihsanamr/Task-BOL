@@ -209,7 +209,7 @@ void prosesMenu(int pilihanMenu) {
                     }
 
                     printf("Jumlah huruf vokal pada bulan %s\t: %d\n", namaPilihanBulan, hurufVokal);
-                    printf("Jumlah huruf konsonan pada bulan %s\t: %d\n", namaPilihanBulan, hurufKonsonan);
+                    printf("Jumlah huruf konsonan pada bulan %s: %d\n", namaPilihanBulan, hurufKonsonan);
                     printf("--------------------------------------------\n");
                     break;
                 case 'D': 
