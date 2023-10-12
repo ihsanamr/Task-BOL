@@ -1,9 +1,3 @@
-/*
-NIM - Nama  : 2702350592 - Ihsan Amri Muyassar
-Kelas       : JCCA
-Mata Kuliah : Algoritma dan Pemrograman
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
