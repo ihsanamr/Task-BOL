@@ -23,9 +23,10 @@ int partition(char nama[][20], int leftIdx, int rightIdx, int ascending) {
     char pivot[20];
     strcpy(pivot, nama[rightIdx]); // Memilih pivot sebagai elemen terakhir dari array yang akan diurutkan
     int current = leftIdx - 1; // Index current selalu dimulai dari index paling kiri dikurangi satu
-
+    int i = leftIdx;
+    
     // Membandingkan setiap elemen dengan pivot
-    for (int i = leftIdx; i < rightIdx; i++) {
+    for (i; i < rightIdx; i++) {
         // Ternary operator jika user memilih 1 maka akan mengurutkan dari abjad A-Z
         // Ternary operator jika user memilih 0 maka akan mengurutkan dari abjad Z-A
         // Jika nama[i] lebih kecil dari pivot maka posisi current akan bertambah satu (ke kanan) dan elemen nama[i] akan ditukar dengan nama[current]
@@ -52,6 +53,8 @@ void quickSort(char nama[][20], int leftIdx, int rightIdx, int ascending) {
 }
 
 int main() {
+    // Deklarasi variabel i untuk digunakan pada for loop (untuk menghindari error di devcpp)
+    int i = 0;
     // Array string nama
     char nama[10][20] = {
         "Fahmi Harahap", "Icha Nurlisa", "Agus Gumilang", "Zelda Zuraida",
@@ -66,7 +69,7 @@ int main() {
 
     // Data nama sebelum di urutkan
     printf("Before sorted:\n");
-    for (int i = 0; i < 10; i++) {
+    for (i; i < 10; i++) {
         printf(" %2d. %s\n", i + 1, nama[i]);
     }
     printf("\n");
@@ -89,7 +92,10 @@ int main() {
 
     // Data nama setelah di urutkan
     printf("\nAfter sorted:\n");
-    for (int i = 0; i < 10; i++) {
+    i = 0; 
+    /* Atur ulang i menjadi nol karena sebelumnya sudah digunakan pada loop pertama, 
+    jika tidak di set ke 0 lagi maka i saat ini bernilai 10 dan for loop dibawah tidak akan dijalankan. */
+    for (i; i < 10; i++) {
         printf(" %2d. %s\n", i + 1, nama[i]);
     }
     printf("\n");
