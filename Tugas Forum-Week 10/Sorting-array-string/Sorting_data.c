@@ -1,6 +1,15 @@
+/*
+NIM         : 2702350592
+NAMA        : Ihsan Amri Muyassar
+KELAS       : JCCA
+MATAKULIAH  : Algoritma dan Pemrograman
+DOSEN       : Ir. Tri Asih Budiono, M.I.T.
+*/
+
 #include <stdio.h>
 #include <string.h>
 
+// Fungsi untuk menukar string
 void swap(char a[], char b[]) {
     char temp[20];
     strcpy(temp, a);
@@ -32,6 +41,7 @@ int partition(char nama[][20], int leftIdx, int rightIdx, int ascending) {
     return (current + 1); // Mid index
 }
 
+// Fungsi pengurutan dengan Quick Sort
 void quickSort(char nama[][20], int leftIdx, int rightIdx, int ascending) {
     if (leftIdx < rightIdx) { // Melakukan sorting jika setidaknya ada dua string yang bisa dibandingkan
         int midIdx = partition(nama, leftIdx, rightIdx, ascending);
@@ -42,22 +52,26 @@ void quickSort(char nama[][20], int leftIdx, int rightIdx, int ascending) {
 }
 
 int main() {
+    // Array string nama
     char nama[10][20] = {
         "Fahmi Harahap", "Icha Nurlisa", "Agus Gumilang", "Zelda Zuraida",
         "Felix Halim", "Deddy Corbuizer", "Hassan Makmur", "Makmun Sukur",
         "Bella Christie", "Chelshe Love"
     };
 
+    // Header
     printf("==============================\n");
     printf("     SORTING DATA STRING\n");
     printf("==============================\n\n");
 
+    // Data nama sebelum di urutkan
     printf("Before sorted:\n");
     for (int i = 0; i < 10; i++) {
         printf(" %2d. %s\n", i + 1, nama[i]);
     }
     printf("\n");
 
+    // Input user untuk memilih sorting secara ascending atau descending
     int ascending = 0;
     while (1) {
         printf("Sort in ascending (1) or descending (0): ");
@@ -69,8 +83,11 @@ int main() {
         }
     }
 
+    // Memanggil fungsi quick sort untuk mengurutkan data
+    // Karena perhitungan index dimulai dari 0, maka index dari data paling kanan adalah 10 - 1 = 9
     quickSort(nama, 0, 9, ascending);
 
+    // Data nama setelah di urutkan
     printf("\nAfter sorted:\n");
     for (int i = 0; i < 10; i++) {
         printf(" %2d. %s\n", i + 1, nama[i]);
